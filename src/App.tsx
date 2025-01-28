@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Loader2, Share2 } from 'lucide-react';
+import Footer from './Footer';
 
 interface NodeCheckResult {
   tokenId: string;
@@ -135,10 +136,10 @@ function App() {
             <div
               key={index}
               className={`p-4 rounded-lg ${result.loading
-                  ? 'bg-gray-100'
-                  : result.nodeId === '0'
-                    ? 'bg-green-100'
-                    : 'bg-yellow-100'
+                ? 'bg-gray-100'
+                : result.nodeId === '0'
+                  ? 'bg-green-100'
+                  : 'bg-yellow-100'
                 }`}
             >
               <div className="space-y-2">
@@ -195,6 +196,8 @@ function App() {
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
